@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payments - Austen Summers</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta property="og:url" content="https://www.austensummers.com/payments" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Payments - Austen Summers" />
+    <meta
+      property="og:image"
+      content="https://www.austensummers.com/assets/media/immersion_pane_og_image.jpeg"
+    />
+    <meta property="og:description" content="Austen Summers Payments" />
+    <link
+      rel="preload"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_payments.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_footer.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/SuisseIntl-Light-WebM.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/SuisseIntl-SemiBold-WebM.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_animations.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/media/favicons/AS_Icon_Gold_Black_16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/media/favicons/AS_Icon_Gold_Black_32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/media/favicons/AS_Icon_Gold_Black_96x96.png"
+      sizes="96x96"
+    />
+  </head>
+
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+      async
+    ></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link
+      rel="preload"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <script type="text/javascript" src="assets/js/process.js"></script>
+
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-black">
+      <a class="navbar-brand ml-5" href="/"
+        ><img src="assets/media/logo.png" width="186" height="30"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-5">
+          <li class="nav-item ml-2"><a class="nav-link" href="/gta">Game Transformation</a></li>
+          <li class="nav-item ml-2"><a class="nav-link" href="/immersion">Immersion</a></li>
+          <li class="nav-item ml-2"><a class="nav-link" href="/mentorship">Mentorship</a></li>
+          <li class="nav-item ml-2"><a class="nav-link" href="/results">Client Results</a></li>
+          <li class="nav-item ml-1 d-none d-lg-block d-xxl-block">
+            <a class="nav-link" href="https://www.instagram.com/austensummers/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li class="nav-item ml-1 d-none d-lg-block d-xxl-block">
+            <a
+              class="nav-link"
+              href="https://www.youtube.com/austensummers?sub_confirmation=1"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </li>
+          <li class="nav-item ml-1 d-none d-lg-block d-xxl-block">
+            <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- SECTION1 -->
+    <div class="container-fluid section1">
+      <div class="overlay"></div>
+      <h1 class="animated animatedFadeInUp fadeInUp">Payment Options</h1>
+    </div>
+
+    <!-- SECTION2 -->
+    <div class="container section2 mb-0 p-4 pt-5" id="paymentoptions">
+      <h1 class="animated animatedFadeInUp fadeInUp delay-1 text-center">
+        <b>Payment Services</b>
+      </h1>
+      <div class="row my-3 text-center">
+        <div class="col-md-4 col-lg-4"></div>
+        <div class="col-md-4 col-lg-4 my-2 px-lg-5">
+          <a
+            href="#collapseVenmo"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseVenmo"
+          >
+            <b>Venmo</b>
+          </a>
+          <div class="collapse mt-3" id="collapseVenmo">
+            <h6 class="text-danger">
+              Note: Do NOT check the option that says: "Paying for a good or service?"
+            </h6>
+            <a href="https://venmo.com/code?user_id=1632127569362944774">
+              <h4>@austensummers</h4>
+            </a>
+            <p>Last 4 digits: 4482</p>
+            <a href="https://venmo.com/code?user_id=1632127569362944774">
+              <img src="assets/media/venmo_qrcode2.png" width="288px" height="288px" />
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4"></div>
+        <!-- <div class="col-md-6 my-2">
+          <a
+            href="#collapseCashApp"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseCashApp"
+          >
+            <b>CashApp</b>
+          </a>
+          <div class="collapse mt-3" id="collapseCashApp">
+            <a href="https://cash.app/$austenss">
+              <p>$austenss</p>
+              <img src="https://cash.app/qr/$austenss?size=288&margin=0" />
+            </a>
+          </div>
+        </div> -->
+      </div>
+      <div class="row my-3 text-center"></div>
+      <h1 class="animated animatedFadeInUp fadeInUp delay-1 mt-5 text-center">
+        <b>Credit or Debit Card</b> - 3% Fee
+      </h1>
+      <div class="row my-3 text-center">
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="col-md-4 col-lg-4 my-2 px-lg-5">
+          <a
+            href="#collapsePayPal"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapsePayPal"
+          >
+            <b>PayPal</b>
+          </a>
+          <div class="collapse mt-3" id="collapsePayPal">
+            <a
+              target="popup"
+              href="https://www.paypal.me/austens/3090"
+              onclick="window.open('https://www.paypal.me/austens/3090','popup','toolbar=no,menubar=no,location=yes,resizable=yes,status=no,scrollbars=yes,top=125,left=470,width=500,height=650'); return false;"
+              class="btn btn-pay-deposit btn-sub my-2"
+              role="button"
+            >
+              Mentorship Standard - $3,090
+            </a>
+            <a
+              target="popup"
+              href="https://www.paypal.me/austens/5150"
+              onclick="window.open('https://www.paypal.me/austens/5150','popup','toolbar=no,menubar=no,location=yes,resizable=yes,status=no,scrollbars=yes,top=125,left=470,width=500,height=650'); return false;"
+              class="btn btn-pay-deposit btn-sub my-2"
+              role="button"
+            >
+              Mentorship Plus - $5,150
+            </a>
+            <a
+              target="popup"
+              href="https://www.paypal.me/austens/5150"
+              onclick="window.open('https://www.paypal.me/austens/5150','popup','toolbar=no,menubar=no,location=yes,resizable=yes,status=no,scrollbars=yes,top=125,left=470,width=500,height=650'); return false;"
+              class="btn btn-pay-deposit btn-sub my-2"
+              role="button"
+            >
+              Immersion Standard - $5,150
+            </a>
+            <a
+              target="popup"
+              href="https://www.paypal.me/austens"
+              onclick="window.open('https://www.paypal.me/austens','popup','toolbar=no,menubar=no,location=yes,resizable=yes,status=no,scrollbars=yes,top=125,left=470,width=500,height=650'); return false;"
+              class="btn btn-pay-deposit btn-sub my-2"
+              role="button"
+            >
+              Custom Amount
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4 my-2 px-lg-5">
+          <a
+            href="#collapseStripe"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseStripe"
+          >
+            <b>Stripe</b>
+          </a>
+          <div class="collapse mt-3" id="collapseStripe">
+            <button class="btn btn-pay-deposit btn-sub my-2" id="pay-mentorship">
+              Mentorship Deposit - $515
+            </button>
+            <button class="btn btn-pay-deposit btn-sub my-2" id="pay-immersion">
+              Immersion Deposit - $1,030
+            </button>
+            <div>
+              Enter Custom Amount:
+              <p><small class="fee-note">(%3 Fee will be added.)</small></p>
+            </div>
+            <div class="input-group my-2">
+              <input id="stripe-input-price" type="text" class="form-control" placeholder="Price">
+            </div>
+            <button class="btn btn-pay-deposit btn-sub my-2" id="pay-custom">
+              Submit
+            </button>
+          </div>
+        </div>
+        <div class="col-md-2 col-lg-2"></div>
+      </div>
+
+      <h1 class="animated animatedFadeInUp fadeInUp delay-1 mt-5 text-center">
+        <b>Cash</b> - $100 Discount
+      </h1>
+      <div class="row my-3">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h6>$100 off on final payment after sending $1000 electronic deposit (Immersion only)</h6>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+      <h1 class="animated animatedFadeInUp fadeInUp delay-1 mt-5 text-center">
+        <b>Crypto</b> - 10% Discount
+      </h1>
+      <div class="row my-3">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="col-md-12 text-center">
+            <a
+              href="#collapseHowToBuyCrypto"
+              class="btn btn-how-to-buy mb-3"
+              data-toggle="collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseHowToBuyCrypto"
+            >
+              <b>How to Buy Crypto?</b>
+            </a>
+            <div class="collapse mt-3" id="collapseHowToBuyCrypto">
+              <iframe
+                width="475"
+                height="267"
+                src="https://www.youtube.com/embed/Yb6825iv0Vk?start=586"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <h5 class="text-center">Instructions</h5>
+          <h6>1. Send Crypto to one of the addresses below</h6>
+          <h6>
+            2. Send the screenshot or block explorer link with a description to
+            austensummers@protonmail.com
+          </h6>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+      <div class="row my-3 text-center">
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-4 my-2 px-lg-5">
+          <a
+            href="#collapseBitcoin"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseBitcoin"
+          >
+            <b>Bitcoin</b>
+          </a>
+          <div class="collapse mt-3" id="collapseBitcoin">
+            <a
+              href="#collapseBitcoinLegacy"
+              class="btn btn-pay-deposit-btc"
+              data-toggle="collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseBitcoinLegacy"
+            >
+              Legacy
+            </a>
+            <div class="collapse mt-3" id="collapseBitcoinLegacy">
+              <p>bc1q55c7xc0tzfhxp426tzgg0857f38x58f0fknjg8</p>
+              <img src="assets/media/bitcoin_legacy_qrcode.png" width="288px" height="288px" />
+            </div>
+            <a
+              href="#collapseBitcoinSegwit"
+              class="btn btn-pay-deposit-btc mt-3"
+              data-toggle="collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseBitcoin"
+            >
+              Segwit
+            </a>
+            <div class="collapse mt-3" id="collapseBitcoinSegwit">
+              <p>1N3TS9TRTd1Hi8CwHytxbUi8XF5EiojK7B</p>
+              <img src="assets/media/bitcoin_segwit_qrcode.png" width="288px" height="288px" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 my-2 px-lg-5">
+          <a
+            href="#collapseEthereum"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseEthereum"
+          >
+            <b>Ethereum</b>
+          </a>
+          <div class="collapse mt-3" id="collapseEthereum">
+            <p>0xB6F77496Ab82D7cf8fFC4780FaA0E6FfD38d1240</p>
+            <img src="assets/media/ethereum_qrcode.png" width="288px" height="288px" />
+          </div>
+        </div>
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-4 my-2 px-lg-5">
+          <a
+            href="#collapseBitcoinCash"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseBitcoinCash"
+          >
+            <b>Bitcoin Cash</b>
+          </a>
+          <div class="collapse mt-3" id="collapseBitcoinCash">
+            <p>qplwexe5hxywmpagj9uykdlajqcehku2kcmz9hyl3z</p>
+            <img src="assets/media/bitcoincash_qrcode.png" width="288px" height="288px" />
+          </div>
+        </div>
+        <div class="col-md-4 my-2 px-lg-5">
+          <a
+            href="#collapseDAI"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseDAI"
+          >
+            <b>DAI Stablecoin</b>
+          </a>
+          <div class="collapse mt-3" id="collapseDAI">
+            <p>0xB6F77496Ab82D7cf8fFC4780FaA0E6FfD38d1240</p>
+            <img src="assets/media/usdtether_qrcode.png" width="288px" height="288px" />
+          </div>
+        </div>
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-4 my-2 px-lg-5">
+          <a
+            href="#collapseMonero"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseMonero"
+          >
+            <b>Monero</b>
+          </a>
+          <div class="collapse mt-3" id="collapseMonero">
+            <p>
+              44TdvPXHYUqguMYUprSLZ7T6E5gzLUEGpERaKsppHbzBMrGVQWcPn2AG2vLwLF6ppYcFywrDxJkhnVX27aBpKtYZ8Cuz8tZ
+            </p>
+            <img src="assets/media/monero_qrcode.png" width="288px" height="288px" />
+          </div>
+        </div>
+        <div class="col-md-4 my-2 px-lg-5">
+          <a
+            href="#collapseRipple"
+            class="btn btn-pay-deposit"
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseRipple"
+          >
+            <b>Ripple</b>
+          </a>
+          <div class="collapse mt-3" id="collapseRipple">
+            <p>rBFwwA7SSZTyEwdXisuGz4yQrxMtPXfnG1</p>
+            <img src="assets/media/xrp_qrcode.png" width="288px" height="288px" />
+          </div>
+        </div>
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-2 my-md-2"></div>
+        <div class="col-md-2 my-md-2"></div>
+      </div>
+    </div>
+
+    <!-- SECTION7 -->
+
+    <!-- SECTION6 -->
+
+    <!-- SECTION7 -->
+
+    <!-- SECTION 8  -->
+    <footer class="pt-5">
+      <div class="footer-row d-flex justify-content-around">
+        <div class="footer-logo">
+          <img src="assets/media/logo.png" width="200px" height="35px" />
+        </div>
+
+        <div class="footer-nav">
+          <b class="text-dark">Offerings</b>
+          <a href="/gta">Game Transformation</a>
+          <a href="/mentorship">Mentorship</a>
+          <a href="/immersion">Immersion</a>
+        </div>
+
+        <div class="footer-helpful">
+          <b class="text-dark">AustenSummers.com</b>
+          <a href="/contact">Contact Us</a>
+          <a href="/">Home</a>
+          <a href="/terms">Terms and Conditions</a>
+          <a href="/careers">Careers</a>
+          <a href="/collab">Collab</a>
+          <a href="/disclaimer">Success Disclaimer</a>
+        </div>
+
+        <div class="footer-icons">
+          <b class="mb-2">Connect With Us</b>
+          <div class="iconlist">
+            <a class="p-1" href="https://www.instagram.com/austensummers/" target="_blank"
+              ><i class="fab fa-2x fa-instagram"></i
+            ></a>
+            <a
+              class="p-1"
+              href="https://www.youtube.com/austensummers?sub_confirmation=1"
+              target="_blank"
+              ><i class="fab fa-2x fa-youtube"></i
+            ></a>
+            <a class="p-1" href="/contact"><i class="fas fa-2x fa-envelope-open"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-row d-flex justify-content-end mt-0 mt-md-5">
+        <p>© 2023 AustenSummers.com. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

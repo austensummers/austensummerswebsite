@@ -1,0 +1,19 @@
+{
+  "name": "austensummers",
+  "version": "1.0.0",
+  "description": "Austen Summers Website Launch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "etohimself, Goom11",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.18.2",
+    "fsm": "^1.0.2",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "stripe": "^8.137.0"
+  }
+}
