@@ -81,8 +81,8 @@ router.get("/results", function (req, res, next) {
 });
 
 /* GET GTA page. */
-router.get("/gta", function (req, res, next) {
-  res.sendFile(path.join(__dirname + "/gta.html"));
+router.get("/transformation", function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/transformation.html"));
 });
 
 router.get("/terms", function (req, res, next) {
