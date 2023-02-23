@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var stripe = Stripe("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+    var stripe = Stripe("");
 
     $("#pay-custom").click(function () {
       const inputPrice = Math.ceil($("#stripe-input-price").val() * 1.03);
