@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var stripe = Stripe("");
+    var stripe = Stripe("pk_test_51MeNnUKogrd9oqY2CvpNt8LDeXViFbr4uyfSTlweenpjUagJTMPpvpK0le4v89oss5DoLuHMTTSQzR34d3LrjJpu00V7ZJ3nfH");
 
     $("#pay-custom").click(function () {
       const inputPrice = Math.ceil($("#stripe-input-price").val() * 1.03);
