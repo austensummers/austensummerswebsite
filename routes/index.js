@@ -10,19 +10,19 @@ const stripe = require("stripe")(stripeSecretKey);
 
 const saleDB = {
   bootcamp: {
-    title: "Bootcamp Deposit",
+    title: "Bootcamp",
     image: "https://austensummers.com/assets/media/bootcamp8.png",
-    price: 51500,
+    price: 515000,
   },
   mentorship: {
-    title: "Austen Summers Mentorship Deposit",
+    title: "Austen Summers Mentorship",
     image: "https://austensummers.com/assets/media/academy2.jpg",
-    price: 51500,
+    price: 515000,
   },
   immersion: {
-    title: "Immersion Deposit",
+    title: "Immersion",
     image: "https://austensummers.com/assets/media/immersion_pane.jpeg",
-    price: 103000,
+    price: 515000,
   },
   custom: {
     title: "Custom Amount",
