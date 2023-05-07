@@ -234,6 +234,10 @@ p {
   background-image: url("../media/immersion_pane.jpeg");
 }
 
+#pg4 .pageimg {
+  background-image: url("../media/ig/2.jpg");
+}
+
 /*SECTION3*/
 .black {
   background-color: black;
