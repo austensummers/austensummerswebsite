@@ -37,10 +37,10 @@ if (process.env.GOOMDEV) {
   const httpsServer = https.createServer(
     {
       key: fs.readFileSync(
-        "/etc/letsencrypt/live/austensummers.com/privkey.pem"
+        "./certificates/www.austensummers.com.key"
       ),
       cert: fs.readFileSync(
-        "/etc/letsencrypt/live/austensummers.com/fullchain.pem"
+        "./certificates/www.austensummers.com.crt"
       ),
     },
     app
