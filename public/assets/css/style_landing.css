@@ -16,7 +16,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #f5f5f5 !important;
+  background-color: #003366 !important;
   font-family: "SuisseIntl";
 }
 
@@ -47,8 +47,7 @@ p {
 
 /*SECTION1*/
 .section1 {
-  background-image: url("../media/tampa1.jpeg");
-  background-color: #f5f5f5;
+  background-color: #003366;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -74,7 +73,6 @@ p {
   position: absolute;
   height: inherit;
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -120,7 +118,7 @@ p {
 
 /*SECTION2*/
 .section2 {
-  background-color: #f5f5f5;
+  background-color: #003366;
   position: relative;
 }
 
@@ -236,6 +234,10 @@ p {
 
 #pg4 .pageimg {
   background-image: url("../media/ig/2.jpg");
+}
+
+#pg5 .pageimg {
+  background-image: url("../media/Gta_image_1.png");
 }
 
 /*SECTION3*/
