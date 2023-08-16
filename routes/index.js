@@ -80,9 +80,14 @@ router.get("/results", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/clientresults.html"));
 });
 
-/* GET GTA page. */
+/* redirect transformation to VIP list. */
 router.get("/transformation", function (req, res, next) {
-  res.sendFile(path.join(__dirname + "/transformation.html"));
+  res.sendFile(path.join(__dirname + "/vip.html"));
+});
+
+/* GET VIP page. */
+router.get("/vip", function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/vip.html"));
 });
 
 router.get("/terms", function (req, res, next) {
