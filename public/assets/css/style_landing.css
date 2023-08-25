@@ -656,7 +656,11 @@ footer .footer-icons {
   }
 
   .section1 {
-    height: 700px;
+    height: auto;
+  }
+  .section1 h1 {
+    width: 80%;
+    margin-top:70px;
   }
   .section1 h2 {
     text-shadow: 1px 2px 2px black;
