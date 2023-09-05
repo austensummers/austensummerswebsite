@@ -285,6 +285,9 @@ footer .footer-icons {
 .vipList {
   margin-top: 40px;
 }
+.course-preview {
+  margin-top: 40px;
+}
 
 /*RESPONSIVENESS*/
 @media only screen and (max-width: 1200px) {
