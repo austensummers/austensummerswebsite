@@ -289,6 +289,14 @@ footer .footer-icons {
   margin-top: 60px;
 }
 
+.privacy-section-1 {
+  padding-top: 100px;
+}
+
+.privacy-section-1 p {
+  line-height: 30px;;
+}
+
 /*RESPONSIVENESS*/
 @media only screen and (max-width: 1200px) {
   .section1 h2 {

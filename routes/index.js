@@ -70,6 +70,11 @@ router.get("/bootcamp", function (req, res) {
   res.redirect("/immersion");
 });
 
+/* GET privacy page. */
+router.get("/privacy-policy", function (req, res) {
+  res.sendFile(path.join(__dirname + "/privacypolicy.html"));
+});
+
 /* GET immersion page. Colombia Blocker Middleware */
 router.get("/immersion", colombiablocker, function (req, res, next) {
   res.sendFile(path.join(__dirname + "/immersion.html"));
