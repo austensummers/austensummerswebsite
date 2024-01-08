@@ -95,6 +95,10 @@ router.get("/vip", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/vip.html"));
 });
 
+router.get("/affiliate", function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/affiliate.html"));
+});
+
 router.get("/terms", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/terms.html"));
 });
