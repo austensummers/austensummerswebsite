@@ -95,6 +95,14 @@ router.get("/vip", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/vip.html"));
 });
 
+router.get("/mentorship-consultation", function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/mentorship_consultation.html"));
+});
+
+router.get("/immersion-consultation", function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/immersion_consultation.html"));
+});
+
 router.get("/affiliates", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/affiliates.html"));
 });
