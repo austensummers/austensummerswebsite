@@ -20,6 +20,25 @@
   transition: all 1s;
 }
 
+.image-column {
+  display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.image-column img  {
+  margin-bottom: 2rem; /* Adds space between rows of images */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Light stroke around the image */
+  /*border-radius: 4px; /* Optional: rounded corners for a softer look */ 
+}
+
+.apply-btn {
+  margin-bottom: 2rem;
+}
+
+
+
 html,
 body {
   margin: 0;
