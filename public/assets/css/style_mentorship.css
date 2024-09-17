@@ -20,6 +20,19 @@ body {
   font-family: "SuisseIntl";
 }
 
+.hidden-element {
+  opacity: 0;
+  transform: translateY(20px); /* Example of a starting position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Match the animation duration */
+}
+
+.animatedFadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 /*NAVBAR*/
 .bg-black {
   background-image: -o-linear-gradient(75deg, #f5f5f5 0%, white 100%);
@@ -42,12 +55,10 @@ body {
 
 /*SECTION1*/
 .section1 {
-  background-image: url("../media/tampa1.jpeg");
-  background-color: #f5f5f5;
+  padding-top: 50px;
   background-position-x: center;
   background-position-y: -150px;
   background-repeat: no-repeat;
-  height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,7 +85,6 @@ body {
 
 .section1 h1 {
   margin-top: 50px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   width: 60%;
   z-index: 5;
   font-size: 52px;
@@ -82,17 +92,225 @@ body {
   line-height: 1;
   letter-spacing: 0.15rem;
   text-align: center;
+  color: black;
 }
 
 .section1 h2 {
   width: 45%;
-  margin-top: 20px;
   font-size: 1.6rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 5;
   font-weight: 100;
   letter-spacing: 0.1rem;
   text-align: center;
+  color: black;
+}
+
+.carousel-placeholder {
+  height: 350px;
+}
+
+
+.carousel {
+  display: none; /* Initially hide the carousel */
+  position: relative;
+  max-width: 800px;  /* Adjust width as needed */
+  height: auto;      /* Height adjusts based on image size */
+  margin: 0 auto;    /* Center the carousel on the page */
+}
+.carousel.show {
+  display: block; /* Show carousel once images are loaded */
+}
+
+
+.carousel-item img {
+  max-height: 400px; /* Adjust the height as needed */
+  width: 100%;
+  object-fit: cover; /* Maintain image aspect ratio and cover the area */
+}
+
+
+.carousel,
+.carousel-item,
+.carousel img {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 100%;       /* Carousel takes up full width */
+    overflow: hidden;  /* Hide overflow if images exceed the height */
+  }
+  
+  .carousel-item img {
+    width: 100%;           /* Image will take up full width */
+    height: 100%;          /* Image will take up full height of the carousel */
+    object-fit: cover;      /* Maintain aspect ratio and zoom in to cover container */
+    object-position: center; /* Center the image inside the container */
+    height: 400px;     /* Lock the height to a specific value */
+  }
+}
+
+
+.large-text {
+  font-size:large;
+}
+
+.sectionblack {
+  background-color: black;
+  padding-bottom: 40px;
+}
+
+.sectionblack h2 {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  color:white;
+}
+
+.icon-circle {
+  width: 140px;          /* Set the width of the circle */
+  height: 140px;         /* Set the height of the circle */
+  background-color: white;  /* White background for the circle */
+  border-radius: 50%;    /* Makes the div a perfect circle */
+  border: 3px solid #ffcc66;
+  display: flex;         /* Use flexbox to center the image */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;   /* Center vertically */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  position: relative;
+  z-index: 1;
+}
+
+.icon-circle img {
+  width: 60%;            /* Adjust this to control the size of the icon */
+  height: 60%;           /* Adjust this to control the size of the icon */
+}
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Space circles evenly */
+  align-items: start;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.icon-row::before {
+  content: '';
+  position: absolute;
+  top: 39%; /* Centers the line vertically */
+  left: 5%; /* Adjust the starting position */
+  right: 5%; /* Adjust the ending position */
+  height: 1px; /* Thickness of the line */
+  background-color: #ffcc66;
+  z-index: 0; /* Ensures the line is behind the circles */
+}
+
+@media (max-width: 992px) {
+  .icon-row::before {
+    content: none;
+  }
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column; /* Stack the circle and text vertically */
+  align-items: center;    /* Center items horizontally within the item */
+  text-align: center;     /* Center the text below the circle */
+  margin-top: 20px;       /* Space between circle and text */
+  width: 120px; 
+  min-height: 180px;
+  justify-content: center;
+}
+
+.icon-text {
+  margin-top: 10px; /* Space between the circle and text */
+  font-size: 16px;
+  color: white; /* Set the color of the text */
+  max-width: 100%;
+}
+
+
+.img-fluid {
+  max-width: 80%; /* Adjust the percentage to control the maximum width of the image */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the image horizontally if needed */
+  display: block; /* Ensure the image is displayed as a block-level element */
+}
+
+.testimonial-section h1 {
+  font-size: 44px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  color: black;
+}
+
+.testimonial-section .image-column {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  transition: max-height 0.5s ease-in-out; /* Smooth transition */
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden; /* Hide overflow to handle fade effect */
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(245, 245, 245, 1) 100%);
+  pointer-events: none; /* Allow interaction with content beneath the overlay */
+}
+
+.image-container.collapsed .image-column {
+  max-height: 1000px; /* Adjust to the height you want to initially show */
+}
+
+.image-container.expanded .image-column {
+  max-height: none; /* Remove max-height to show all images */
+}
+
+
+.testimonial-section .image-column img  {
+  margin-bottom: 2rem; /* Adds space between rows of images */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Light stroke around the image */
+  /*border-radius: 4px; /* Optional: rounded corners for a softer look */ 
+}
+
+
+
+
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color:black;
+  font-weight: bold;
+}
+
+.load-more-btn:hover,
+.load-more-btn:focus {
+  background-color: rgb(56, 56, 56); /* Keep button background color black */
+  border-color: rgb(56, 56, 56); /* Keep button border color black */
+  color: white; /* Keep text color white */
+  box-shadow: none; /* Remove default focus shadow */
 }
 
 .black {
@@ -251,6 +469,44 @@ video {
      object-fit: cover;
 }
 
+
+
+
+/* Flex item for each video column */
+.video-testimonial-col {
+  display: flex;
+  flex-direction: column; /* Stack text and video vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: space-between; /* center vertically */
+  width: 100%; /* Full width of column on smaller screens */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  margin-bottom: 20px; /* Space between rows on smaller screens */
+}
+
+/* Text container above the video */
+.text-container {
+  margin-bottom: 10px; /* Space between text and video */
+  text-align: center; /* Center align text */
+  width: 100%; /* Full width of the column */
+}
+
+.text-container h2 {
+  font-size: 28px;
+}
+/* Ensure consistent styling for video containers */
+.video-container {
+  width: 100%; /* Make video container take full width of column */
+}
+
+/* Ensure iframes are responsive */
+.video-container iframe {
+  width: 100%; /* Full width of the container */
+  height: 270px; /* Fixed height for consistency */
+  border: none; /* Remove default border */
+}
+
+
+
 .book-table {
   width: 60%;
   height: 300px;
@@ -312,6 +568,16 @@ video {
 
 .section_questions ul {
   font-size: 1.5rem;
+}
+
+.section6 h2 {
+  margin-bottom: 0px;
+}
+
+.section6 i {
+  font-size: 25px;
+  position: relative;
+  top: -2px;
 }
 
 .center-breaks {

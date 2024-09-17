@@ -45,21 +45,43 @@
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s;
 }
+
 .delay-2 {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
+
 .delay-3 {
   -webkit-animation-delay: 0.75s;
           animation-delay: 0.75s;
 }
+
 .delay-4 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
+
 .delay-5 {
   -webkit-animation-delay: 1.25s;
           animation-delay: 1.25s;
+}
+.transition-delay-1 {
+  transition-delay: 0.2s;
+}
+.transition-delay-2 {
+  transition-delay: 0.3s;
+}
+.transition-delay-3 {
+  transition-delay: 0.4s;
+}
+.transition-delay-4 {
+  transition-delay: 0.5s;
+}
+.transition-delay-5 {
+  transition-delay: 0.6s;
+}
+.transition-delay-6 {
+  transition-delay: 0.7s;
 }
 
 @-webkit-keyframes pulse {
