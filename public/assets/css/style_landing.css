@@ -16,7 +16,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #003366 !important;
+  background-color: white !important;
   font-family: "SuisseIntl";
 }
 
@@ -47,11 +47,12 @@ p {
 
 /*SECTION1*/
 .section1 {
-  background-color: #003366;
+  position: relative; /* Make the section relative for z-index to work */
+  background-image: url("../media/homepage1_2.jpg");
   background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  height: 550px;
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: right center; /* Stick the background image to the right */
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,13 +62,14 @@ p {
           flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
   font-family: "SuisseIntl";
+  overflow: hidden; /* Ensure no content overflows */
 }
+
 
 .section1 .overlay {
   position: absolute;
@@ -76,11 +78,14 @@ p {
   z-index: 1;
 }
 
-.section1 ul {
-  z-index: 5;
+.homepage-col {
+  display:flex;
+  flex-direction: column;
   position: relative;
-  top: 1%;
+  z-index: 2; /* Ensures content, including the button, is above the overlay */
 }
+
+
 
 .section1 li {
   background-color: rgba(255, 165, 0, 0);
@@ -92,6 +97,7 @@ p {
 }
 
 .section1 h1 {
+  text-align: left;
   font-size: 40px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-weight: 600;
@@ -100,8 +106,14 @@ p {
   z-index: 5;
   line-height: 1;
   letter-spacing: 1px;
-  text-align: center;
   max-width: 830px;
+}
+
+@media (max-width: 768px) {
+  .section1 h1 {
+    text-align: center;
+    align-self: center;
+  }
 }
 
 .section1 h2 {
@@ -116,129 +128,59 @@ p {
   margin-top: 20px;
 }
 
+.btn-start-now {
+  color: #0f0f0f;
+  background-color: #ffcc66;
+  border-color: #ffcc66;
+  font-size: 20px;
+  width: 100%;
+  max-width: 215px;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.btn-start-now:hover {
+  color: #0f0f0f;
+  background-color: #c4922d;
+  border-color: #c4922d;
+}
+
+@media (max-width: 768px) {
+  .btn-start-now {
+    align-self: center;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+}
+
 /*SECTION2*/
 .section2 {
-  background-color: #003366;
-  position: relative;
-}
-
-.section2 .pickone {
-  position: absolute;
-  margin-top: -150px;
-  width: 99%;
-  text-align: center;
-  color: white;
-  z-index: 5;
-  font-size: 1.2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  letter-spacing: 0.2rem;
-  font-family: SuisseIntl;
-  font-weight: 600;
-}
-
-.page {
-  border-radius: 0.5rem !important;
-  z-index: 5;
-  margin-top: -80px;
-  width: 250px;
   background-color: white;
-  overflow: hidden;
-  -webkit-transition: all 0.1s;
-  -o-transition: all 0.1s;
-  transition: all 0.1s;
-  -webkit-box-shadow: 1px 5px 25px rgba(255, 255, 255, 1);
-          box-shadow: 1px 5px 25px rgba(255, 255, 255, 1);
 }
 
-.page:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.03);
-      -ms-transform: scale(1.03);
-          transform: scale(1.03);
-  -webkit-box-shadow: 1px 5px 25px rgba(0, 100, 200, 0.5);
-          box-shadow: 1px 5px 25px rgba(0, 100, 200, 0.5);
-}
-
-.page .pageimg {
-  background-color: #cccccc;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 180px;
+.btn-learn-more {
+  color: #0f0f0f;
+  background-color: #ffcc66;
+  border-color: #ffcc66;
+  font-size: 20px;
   width: 100%;
+  max-width: 215px;
+  padding-top:10px;
+}
+.btn-learn-more:hover {
+  color: #0f0f0f;
+  background-color: #c4922d;
+  border-color: #c4922d;
 }
 
-.page .pagetext {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 1rem;
-  background-color: #03071e;
-  font-size: 1rem;
-  font-weight: 50;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-.page .pageimg .pane-overlay {
+.section-courses img {
+  height: 316px;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  object-fit: cover;
 }
 
-.page .pageimg .pane-overlay h3 {
-  height: 100%;
-  width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  font-size: 1.5rem;
-  font-family: SuisseIntl;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-}
 
-#pg1 .pageimg {
-  background-image: url("../media/mentorship_homepage.jpg");
-}
-
-#pg2 .pageimg {
-  background-image: url("../media/bootcamp8.png");
-}
-
-#pg3 .pageimg {
-  background-image: url("../media/homepage_immersion_blurred.png");
-}
-
-#pg4 .pageimg {
-  background-image: url("../media/ig/2.jpg");
-}
-
-#pg5 .pageimg {
-  background-image: url("../media/Gta_image_1.png");
-}
 
 /*SECTION3*/
 .black {
