@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // LAZY LOADING FOR IMAGES
+// LAZY LOADING FOR IMAGES
 // -----------------------------------
 
 // Fetch all images from both columns
@@ -89,79 +89,36 @@ let currentImageCount = 0; // How many images are currently displayed
 
 
 
-  // LAZY LOADING FOR VIDEOS
+// LAZY LOADING FOR VIDEOS
 // -----------------------------------
 
-  const videosPerPage = 6; // Number of videos to show per "Load More"
-  let currentVideoCount = 0; // How many videos are currently displayed
+const lazyVideos = document.querySelectorAll("iframe.video-item");
 
-    // Function to load the video source when showing videos
-    function loadVideoSources(videoItem) {
-        const iframe = videoItem.querySelector('iframe');
-        if (iframe && !iframe.src) {
-            iframe.src = iframe.getAttribute('data-src'); // Set the actual src from data-src
-        }
-    }
-
-    // Function to show videos
-    function showNextVideos() {
-        const videos = document.querySelectorAll('.video-item');
-        for (let i = currentVideoCount; i < currentVideoCount + videosPerPage; i++) {
-            if (videos[i]) {
-                videos[i].style.display = 'block'; // Display the video
-                loadVideoSources(videos[i]);       // Load video source
-            }
-        }
-        currentVideoCount += videosPerPage;
-    }
-
-    // Show initial videos when the page loads
-    showNextVideos();
-
-
-
-
-  //LOAD MORE BUTTON FOR TESTIMONIALS videos
-  // -----------------------------------
-
-  const loadMoreButton = document.querySelector('.load-more-btn-1');
-  const imageContainer = document.querySelector('.videos-wrapper');
-
-  if (!loadMoreButton || !imageContainer) {
-    console.error('Elements not found');
-    return;
-  }
-
-  // Set the initial height and state
-  const initialHeight = 1000; // Initial visible height
-  let currentHeight = initialHeight;
-
-  // Function to update the height of the container
-  function updateContainerHeight() {
-    // Remove 'collapsed' class if present
-    if (imageContainer.classList.contains('collapsed')) {
-      imageContainer.classList.remove('collapsed');
-    }
-
-    // Increase the height by 1000px
-    currentHeight += 1000;
-    imageContainer.style.maxHeight = currentHeight + 'px';
-
-    // Hide the button if all content is visible
-    if (currentHeight >= imageContainer.scrollHeight) {
-      loadMoreButton.style.display = 'none';
-    }
-  }
-
-  // Add event listener to the button
-  loadMoreButton.addEventListener('click', function () {
-    showNextVideos();
-    updateContainerHeight();
+// Check if the IntersectionObserver is supported
+if ("IntersectionObserver" in window) {
+  // Create a new observer instance
+  const videoObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const iframe = entry.target;
+        // Replace the data-src attribute with the src attribute to start loading the video
+        iframe.src = iframe.getAttribute("data-src");
+        iframe.removeAttribute("data-src");
+        observer.unobserve(iframe);
+      }
+    });
   });
 
-  // Initially hide the button if content is already fully visible
-  if (imageContainer.scrollHeight <= initialHeight) {
-    imageContainer.classList.remove('collapsed');
-    loadMoreButton.style.display = 'none';
-  }
+  // Observe each lazy video
+  lazyVideos.forEach(video => videoObserver.observe(video));
+} else {
+  // Fallback for older browsers: Load all videos immediately
+  lazyVideos.forEach(iframe => {
+    iframe.src = iframe.getAttribute("data-src");
+    iframe.removeAttribute("data-src");
+  });
+}
+
+
+
 });

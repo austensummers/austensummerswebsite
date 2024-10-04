@@ -224,13 +224,13 @@ video {
 }
 
 
-.videos-wrapper,
+
 .image-container {
   position: relative;
   overflow: hidden; /* Hide overflow to handle fade effect */
 }
 
-.videos-wrapper::after,
+
 .image-container::after {
   content: '';
   position: absolute;
@@ -242,18 +242,11 @@ video {
   pointer-events: none; /* Allow interaction with content beneath the overlay */
 }
 
-.videos-wrapper.collapsed,
+
 .image-container.collapsed .image-column {
   max-height: 1000px; /* Adjust to the height you want to initially show */
 }
 
-
-.video-item {
-  display: none; /* for lazy loading */
-}
-
-
-.load-more-btn-1,
 .load-more-btn-2 {
   display: block;
   margin: 20px auto;
@@ -262,8 +255,7 @@ video {
   font-weight: bold;
 }
 
-.load-more-btn-1:hover,
-.load-more-btn-1:focus,
+
 .load-more-btn-2:hover,
 .load-more-btn-2:focus {
   background-color: rgb(56, 56, 56); /* Keep button background color black */
@@ -272,6 +264,55 @@ video {
   box-shadow: none; /* Remove default focus shadow */
 }
 
+
+.card-container {
+  display: flex; /* Center the card horizontally */
+  justify-content: center;
+  padding: 20px; /* Some space on top and bottom */
+}
+
+.card-container ul li {
+  font-size: 1.2rem;
+}
+.card-container p {
+  text-align:start;
+}
+
+.card-top-section {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 39px;
+}
+
+.card {
+  max-width: 1000px; /* Max width of the card */
+  width: 100%; /* Full width to ensure responsiveness */
+  margin: 20px; /* Margins to avoid touching edges */
+  background-color: #fff; /* White background for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+  border-radius: 8px; /* Rounded corners */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+}
+
+.card-header-container {
+  background-color: #ffcc66;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 15px;
+}
+
+.card-header-container h2 {
+  color:black;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.book-mentorship-btn {
+  max-width: none;
+}
 
 /*FOOTER*/
 footer {
