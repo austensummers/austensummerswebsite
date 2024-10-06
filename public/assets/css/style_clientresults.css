@@ -264,7 +264,6 @@ video {
   box-shadow: none; /* Remove default focus shadow */
 }
 
-
 .card-container {
   display: flex; /* Center the card horizontally */
   justify-content: center;
