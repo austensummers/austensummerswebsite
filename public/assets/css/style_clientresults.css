@@ -269,6 +269,7 @@ video {
   display: flex; /* Center the card horizontally */
   justify-content: center;
   padding: 20px; /* Some space on top and bottom */
+  width:100%;
 }
 
 .card-container ul li {
@@ -312,6 +313,24 @@ video {
 
 .book-mentorship-btn {
   max-width: none;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    padding: 0px; /* Reduce padding on smaller screens */
+  }
+
+  .card-top-section {
+    padding: 0px;
+  }
+
+  .card {
+    margin: 0px; /* Reduce margins on smaller screens */
+  }
+
+  .apply-btn {
+    margin: 0px; /* Reduce button margin */
+  }
 }
 
 /*FOOTER*/
