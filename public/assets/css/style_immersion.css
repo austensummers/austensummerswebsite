@@ -373,6 +373,38 @@ video {
   font-size: 1.3rem;
 }
 
+
+.day-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.label-grey {
+  color:gray;
+}
+
+.image-container {
+  display: flex;
+  align-items: center; /* Centers image vertically */
+  justify-content: end; /* Aligns image to the right */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px; /* Adds rounded corners */
+}
+
+.schedule-section .row:not(:last-child) {
+  border-bottom: 1px solid #ddd; /* Thin gray line */
+  padding-bottom: 15px; /* Adds spacing between rows */
+}
+
+
+
+
 .section6 h2 {
   margin-bottom: 0px;
 }
